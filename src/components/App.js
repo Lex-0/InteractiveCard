@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles.css";
-import img4 from "../assets/img/img4.svg";
-import img2 from "../assets/img/img2.png";
-import img3 from "../assets/img/img3.png";
+import {imagenes} from './imagenes'
 
 function App() {
   const [Name, setName] = useState("");
@@ -32,7 +30,7 @@ function App() {
     setName(NameResult);
     setTargetName(inputValue);
 
-    if (inputValue == "") {
+    if (inputValue === "") {
       setErrorA("This field is required", true);
       setTargetName("JANE APPLESEED");
     } else {
@@ -42,10 +40,11 @@ function App() {
   const handleKeyUpNumber = (e) => {
     const inputValue = e.target.value;
     const NumberResult = inputValue
-    .replace(/\D/g, '')
-    .replace(/([0-9]{4})/g, '$1 ').trim();
+      .replace(/\D/g, "")
+      .replace(/([0-9]{4})/g, "$1 ")
+      .trim();
 
-    setNumber(NumberResult)
+    setNumber(NumberResult);
     setTargetNumber(inputValue);
 
     if (regExp.test(Number)) {
@@ -54,7 +53,7 @@ function App() {
     } else {
       setErrorB("");
     }
-    if (Number == "") {
+    if (Number === "") {
       setErrorB("This field is required", true);
       setTargetNumber("0000 0000 0000 0000");
     } else {
@@ -71,7 +70,7 @@ function App() {
     if (Month > 12) {
       return;
     }
-    if (Month == "") {
+    if (Month === "") {
       setErrorC("This field is required", true);
       setTargetMonth("00");
     } else {
@@ -88,7 +87,7 @@ function App() {
     if (Year > 23) {
       return;
     }
-    if (Year == "") {
+    if (Year === "") {
       setErrorD("can`t be blank", true);
       setTargetYear("00");
     } else {
@@ -103,7 +102,7 @@ function App() {
     setCvc(CvcResult);
     setTargetCvc(inputValue);
 
-    if (Cvc == "") {
+    if (Cvc === "") {
       setErrorE("can`t be blank", true);
       setTargetCvc("000");
     } else {
@@ -138,33 +137,41 @@ function App() {
   };
   return (
     <div className="container">
-      <div className="container-left"></div>
+      <div className="container-left">
+        <img src={imagenes.imagen1} alt="text" className="img-left" />
+      </div>
       <div className="back-card">
-      <img src={img3} />
+        <img src={imagenes.imagen3} alt="text" className="img-back" />
+        <div className="content-back">
         <div className="card-cvc">
           <label>{TargetCvc}</label>
         </div>
+        </div>
+        
+
       </div>
 
       <div className="front-card">
-      <img src={img2} />
-        <div className="jjj">
-          <h1></h1>
-          <h2></h2>
-        </div>
-        <div className="card-number">
-          <div>
-            <span className="Style-number">{TargetNumber}</span>
+        <img src={imagenes.imagen2} alt="text" className="img-font" />
+        <div className="content-front">
+          <div className="cont-icons">
+            <h1> </h1>
+            <h2> </h2>
           </div>
-        </div>
-        <div className="card-footer">
-          <div>
-            <label className="card-name">{TargetName}</label>
+          <div className="card-number">
+            <div>
+              <span className="Style-number">{TargetNumber}</span>
+            </div>
           </div>
-          <div className="card-fecha">
-            <label>
-              {TargetMonth}/{TargetYear}
-            </label>
+          <div className="card-footer">
+            <div>
+              <label className="card-name">{TargetName}</label>
+            </div>
+            <div className="card-fecha">
+              <label>
+                {TargetMonth}/{TargetYear}
+              </label>
+            </div>
           </div>
         </div>
       </div>
@@ -176,7 +183,7 @@ function App() {
               <span>CARDHODER NAME</span>
               <div>
                 <input
-                  maxLength={40}
+                  maxLength={25}
                   className={errorA && !Name ? "input-inv" : "name"}
                   placeholder="e.g Jane Appleseed"
                   onKeyUp={handleKeyUpName}
@@ -251,19 +258,27 @@ function App() {
               </button>
             </div>
             <footer className="attribution">
-        Challenge by{" "}
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
-          Frontend Mentor
-        </a>
-        . Coded by{" "}
-        <a href="https://www.frontendmentor.io/profile/Lex-0" target="_black">Lex-0</a>.
-      </footer>
+              Challenge by{" "}
+              <a
+                href="https://www.frontendmentor.io?ref=challenge"
+                target="_blank" rel="noreferrer"
+              >
+                Frontend Mentor
+              </a>
+              . Coded by{" "}
+              <a
+                href="https://www.frontendmentor.io/profile/Lex-0"
+                target="_black" rel="noreferrer"
+              >
+                Lex-0
+              </a>
+              .
+            </footer>
           </form>
-          
         )}
         {ContGratitude && (
           <div className="gratitude">
-            <img src={img4} />
+            <img src={imagenes.imagen4} alt="text"/>
             <h5>THANK YOU!</h5>
             <label>We've added your card details</label>
             <button className="btn" onClick={RegistrationForm}>
@@ -272,7 +287,6 @@ function App() {
           </div>
         )}
       </div>
-
     </div>
   );
 }
