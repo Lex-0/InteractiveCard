@@ -104,12 +104,11 @@ width: 95%;
 
 input{
     height: 30px;
-    border: 1px solid ;
+    border: 1px solid rgb(0, 0, 0, 0.2);
     outline: navajowhite;
     border-radius: 4px;
     margin: 2px ;
     cursor: pointer;
-   opacity: 0.2;
    color: black;
    margin: 2px;
 }
@@ -130,7 +129,7 @@ span{
     position: absolute;
     width: 350px;
     height: 200px;
-    background-image: url(./assets/img/img2.png);
+    
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -144,7 +143,7 @@ span{
     position: absolute;
     width: 350px;
     height: 200px;
-    background-image: url(./assets/img/img3.png) ;
+   
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;

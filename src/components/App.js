@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "../styles.css";
 import img4 from "../assets/img/img4.svg";
+import img2 from "../assets/img/img2.png";
+import img3 from "../assets/img/img3.png";
 
 function App() {
   const [Name, setName] = useState("");
@@ -138,12 +140,14 @@ function App() {
     <div className="container">
       <div className="container-left"></div>
       <div className="back-card">
+      <img src={img3} />
         <div className="card-cvc">
           <label>{TargetCvc}</label>
         </div>
       </div>
 
       <div className="front-card">
+      <img src={img2} />
         <div className="jjj">
           <h1></h1>
           <h2></h2>
