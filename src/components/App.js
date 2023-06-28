@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles.css";
-import {imagenes} from './imagenes'
+
 
 function App() {
   const [Name, setName] = useState("");
@@ -138,10 +138,10 @@ function App() {
   return (
     <div className="container">
       <div className="container-left">
-        <img src={imagenes.imagen1} alt="text" className="img-left" />
+        <img src='assets/img/img1.png' alt="text" className="img-left" />
       </div>
       <div className="back-card">
-        <img src={imagenes.imagen3} alt="text" className="img-back" />
+        <img src='assets/img/img3.png' alt="text" className="img-back" />
         <div className="content-back">
         <div className="card-cvc">
           <label>{TargetCvc}</label>
@@ -152,7 +152,7 @@ function App() {
       </div>
 
       <div className="front-card">
-        <img src={imagenes.imagen2} alt="text" className="img-font" />
+        <img src='assets/img/img2.png' alt="text" className="img-font" />
         <div className="content-front">
           <div className="cont-icons">
             <h1> </h1>
@@ -278,7 +278,7 @@ function App() {
         )}
         {ContGratitude && (
           <div className="gratitude">
-            <img src={imagenes.imagen4} alt="text"/>
+            <img src='assets/img/img4.png' alt="text"/>
             <h5>THANK YOU!</h5>
             <label>We've added your card details</label>
             <button className="btn" onClick={RegistrationForm}>
@@ -292,3 +292,5 @@ function App() {
 }
 
 export default App;
+
+
