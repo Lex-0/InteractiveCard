@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles.css";
 
-
 function App() {
   const [Name, setName] = useState("");
   const [Number, setNumber] = useState("");
@@ -31,7 +30,7 @@ function App() {
     setTargetName(inputValue);
 
     if (inputValue === "") {
-      setErrorA("This field is required", true);
+      setErrorA("can`t be blank", true);
       setTargetName("JANE APPLESEED");
     } else {
       setErrorA("");
@@ -54,7 +53,7 @@ function App() {
       setErrorB("");
     }
     if (Number === "") {
-      setErrorB("This field is required", true);
+      setErrorB("can`t be blank", true);
       setTargetNumber("0000 0000 0000 0000");
     } else {
       setErrorB("");
@@ -68,10 +67,11 @@ function App() {
     setTargetMonth(inputValue);
 
     if (Month > 12) {
+      setErrorC("the month is not valid", true);
       return;
     }
     if (Month === "") {
-      setErrorC("This field is required", true);
+      setErrorC("can`t be blank", true);
       setTargetMonth("00");
     } else {
       setErrorC("");
@@ -85,10 +85,11 @@ function App() {
     setTargetYear(inputValue);
 
     if (Year > 23) {
+      setErrorD("the year is not valid", true);
       return;
     }
     if (Year === "") {
-      setErrorD("can`t be blank", true);
+      setErrorD(" ", true);
       setTargetYear("00");
     } else {
       setErrorD("");
@@ -138,21 +139,19 @@ function App() {
   return (
     <div className="container">
       <div className="container-left">
-        <img src='assets/img/img1.png' alt="text" className="img-left" />
+        <img src="assets/img/img1.png" alt="text" className="img-left" />
       </div>
       <div className="back-card">
-        <img src='assets/img/img3.png' alt="text" className="img-back" />
+        <img src="assets/img/img3.png" alt="text" className="img-back" />
         <div className="content-back">
-        <div className="card-cvc">
-          <label>{TargetCvc}</label>
+          <div className="card-cvc">
+            <label>{TargetCvc}</label>
+          </div>
         </div>
-        </div>
-        
-
       </div>
 
       <div className="front-card">
-        <img src='assets/img/img2.png' alt="text" className="img-font" />
+        <img src="assets/img/img2.png" alt="text" className="img-font" />
         <div className="content-front">
           <div className="cont-icons">
             <h1> </h1>
@@ -261,14 +260,16 @@ function App() {
               Challenge by{" "}
               <a
                 href="https://www.frontendmentor.io?ref=challenge"
-                target="_blank" rel="noreferrer"
+                target="_blank"
+                rel="noreferrer"
               >
                 Frontend Mentor
               </a>
               . Coded by{" "}
               <a
                 href="https://www.frontendmentor.io/profile/Lex-0"
-                target="_black" rel="noreferrer"
+                target="_black"
+                rel="noreferrer"
               >
                 Lex-0
               </a>
@@ -278,7 +279,7 @@ function App() {
         )}
         {ContGratitude && (
           <div className="gratitude">
-            <img src='assets/img/img4.png' alt="text"/>
+            <img src="assets/img/img4.svg" alt="text" />
             <h5>THANK YOU!</h5>
             <label>We've added your card details</label>
             <button className="btn" onClick={RegistrationForm}>
@@ -292,5 +293,3 @@ function App() {
 }
 
 export default App;
-
-
